@@ -110,14 +110,12 @@ def pruneNoun(word, phonemes):
     consonants = getConsonantCount(phonemes)
 
     consonantsCounted = 0
-    cutindex = -1
-    for letter in list(word):
-        cutindex += 1
+    for i, letter in enumerate(word):
         if isConsonant(letter):
             consonantsCounted += 1
             if consonantsCounted >= consonants:
                 break
-    return word[cutindex:]
+    return word[i:]
 
 def conjunctify(word):
     """ Prefix 'n ' if the word starts with a vowel
